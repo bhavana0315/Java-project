@@ -1,0 +1,23 @@
+  package com.hcl.conference
+  
+  public class ConferenceDaoTest {
+  
+  @Autowired
+  JdbcTemplate template;
+  
+  @Autowired
+  ConferenceDao conferenceDao
+  
+  @Test
+ public void testFindRooms() {
+ SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
+ template.execute("Insert into conference values('building1', 'adress1', 1, formatter.parse("09/10/2018 06:00:00"), formatter.parse("09/10/2018 08:00:00"))
+ template.execute("Insert into conference values('building2', 'adress2', 2, formatter.parse("09/10/2018 06:00:00"), formatter.parse("09/10/2018 08:00:00"))
+ List<Conference> result = conferenceDao.findRooms(2, formatter.parse("09/10/2018 06:00:00"), formatter.parse("09/10/2018 08:00:00"))
+ assertEquals(1, results.size)
+ assertEquals("building2", results.get(0).buildingName)
+ }
+  
+  
+  
+  }
